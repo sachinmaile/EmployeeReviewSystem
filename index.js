@@ -7,10 +7,10 @@ const path=require('path');
 const db=require('./config/mongoose');
 const session=require('express-session');
 const passport=require('passport');
-const passportLocal=require('./config/passport_local_strategy');
+const passportLocal=require('./config/passport-local');
 // const MongoStore=require('connect-mongo')(session);
 const flash=require('connect-flash');
-const customMWare=require('./config/middleware');
+const customMWare=require('./config/flashMiddleware');
 
 app.use(express.urlencoded());
 app.use(cookieParser());
