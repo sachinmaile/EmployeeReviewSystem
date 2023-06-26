@@ -82,8 +82,9 @@ module.exports.forgetPasswordLink = async function(req, res){
 // Adding employe, it is same as signUp , but it will redirect you to the addEmplyee page, where as 
 // that will redirect you to the sing-in page
 module.exports.addEmployeee = async function(req, res){
-    if(req.body.password != req.body.confirmPassword){
+    if(req.body.password != req.body.conformPassword){
         //disply flash messages
+        console.log(req.body);
         req.flash('error' , 'Password should be equal to Confirm Password');
         return res.redirect('back');
     }
@@ -104,7 +105,7 @@ module.exports.addEmployeee = async function(req, res){
 // THis function is used for making the new Admin, it is admin specific, fucntion
 module.exports.makeAdmin = async function(req, res){
     try {
-        if (req.body.admin_password == 'happy') {
+        if (req.body.admin_password == 'admin') {
             let user = await User.findById(req.user.id );
             user.isAdmin = true;
             user.save();
