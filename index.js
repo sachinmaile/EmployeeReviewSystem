@@ -1,5 +1,6 @@
 const express=require('express');
 const cookieParser=require('cookie-parser');
+require('dotenv').config();
 const app=express();
 const port=process.env.PORT;
 const expressLayouts=require('express-ejs-layouts');
